@@ -1,0 +1,12 @@
+*** SIGUSR2 not implemented, signal based restart unavailable!
+*** SIGUSR1 not implemented, signal based restart unavailable!
+*** SIGHUP not implemented, signal based logs reopening unavailable!
+Puma starting in single mode...
+* Puma version: 6.6.0 ("Return to Forever")
+* Ruby version: ruby 3.2.8 (2025-03-26 revision 13f495dc2c) [x64-mingw-ucrt]
+*  Min threads: 3
+*  Max threads: 3
+*  Environment: development
+*          PID: 6588
+* Listening on http://0.0.0.0:3000
+Use Ctrl-C to stop

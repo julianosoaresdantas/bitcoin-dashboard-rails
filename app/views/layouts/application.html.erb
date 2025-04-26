@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CryptoPrices</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="<%= form_authenticity_token %>" />
+  <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
+
+  <script type="module">import "/assets/application-d0910d45.js"</script>
+
+  <script type="importmap" data-turbo-track="reload">
+    {
+      "imports": {
+        "application": "/assets/application-d0910d45.js",
+        "chart.js": "/assets/chart.js/dist/chart.umd.js"
+      }
+    }
+  </script>
+  <link rel="modulepreload" href="/assets/application-d0910d45.js">
+</head>
+
+<body>
+  <h1>Preços Atuais das Criptomoedas</h1>
+
+  <div class="currency-selector-container">
+    <label for="currency">Moeda Fiduciária:</label>
+    <select name="currency" id="currency-selector">
+      <option value="USD">USD (Dólar Americano)</option>
+      <option value="EUR">EUR (Euro)</option>
+      <option value="BRL">BRL (Real Brasileiro)</option>
+    </select>
+  </div>
+
+  <table class="criptomoedas-table">
+    <thead class="criptomoedas-header">
+      <tr>
+        <th>Criptomoeda</th>
+        <th>Preço</th>
+        <th>Variação (24h)</th>
+        <th>Variação (Absoluta)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="criptomoedas-row">
+        <td data-label="Criptomoeda">Bitcoin (BTC)</td>
+        <td data-label="Preço"><span id="btc-preco">Carregando...</span></td>
+        <td data-label="Variação (24h)"><span id="btc-mudanca">Carregando...</span></td>
+        <td data-label="Variação (Absoluta)"><span id="btc-mudanca-abs">Carregando...</span></td>
+      </tr>
+      <tr class="criptomoedas-row">
+        <td data-label="Criptomoeda">Ethereum (ETH)</td>
+        <td data-label="Preço"><span id="eth-preco">Carregando...</span></td>
+        <td data-label="Variação (24h)"><span id="eth-mudanca">Carregando...</span></td>
+        <td data-label="Variação (Absoluta)"><span id="eth-mudanca-abs">Carregando...</span></td>
+      </tr>
+      <tr class="criptomoedas-row">
+        <td data-label="Criptomoeda">Litecoin (LTC)</td>
+        <td data-label="Preço"><span id="ltc-preco">Carregando...</span></td>
+        <td data-label="Variação (24h)"><span id="ltc-mudanca">Carregando...</span></td>
+        <td data-label="Variação (Absoluta)"><span id="ltc-mudanca-abs">Carregando...</span></td>
+      </tr>
+      <tr class="criptomoedas-row">
+        <td data-label="Criptomoeda">Dogecoin (DOGE)</td>
+        <td data-label="Preço"><span id="doge-preco">Carregando...</span></td>
+        <td data-label="Variação (24h)"><span id="doge-mudanca">Carregando...</span></td>
+        <td data-label="Variação (Absoluta)"><span id="doge-mudanca-abs">Carregando...</span></td>
+      </tr>
+      <tr class="criptomoedas-row">
+        <td data-label="Criptomoeda">Cardano (ADA)</td>
+        <td data-label="Preço"><span id="ada-preco">Carregando...</span></td>
+        <td data-label="Variação (24h)"><span id="ada-mudanca">Carregando...</span></td>
+        <td data-label="Variação (Absoluta)"><span id="ada-mudanca-abs">Carregando...</span></td>
+      </tr>
+      <tr class="criptomoedas-row">
+        <td data-label="Criptomoeda">Solana (SOL)</td>
+        <td data-label="Preço"><span id="sol-preco">Carregando...</span></td>
+        <td data-label="Variação (24h)"><span id="sol-mudanca">Carregando...</span></td>
+        <td data-label="Variação (Absoluta)"><span id="sol-mudanca-abs">Carregando...</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div>
+    <canvas id="bitcoinPriceChart" width="400" height="200"></canvas>
+  </div>
+
+  <p class="atualizacao">Preços atualizados automaticamente a cada 30 segundos.</p>
+</body>
+</html>

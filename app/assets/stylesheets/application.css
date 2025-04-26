@@ -1,0 +1,84 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+/* Estilos gerais */
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.currency-selector-container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#currency-selector {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.atualizacao {
+  text-align: center;
+  font-size: 0.8em;
+  color: #777;
+  margin-top: 10px;
+}
+
+/* Estilos para a tabela de criptomoedas (responsiva) */
+.criptomoedas-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.criptomoedas-header th {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.criptomoedas-row td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Estilos para telas menores (até 768px de largura) */
+@media (max-width: 768px) {
+  .criptomoedas-table {
+    display: block;
+  }
+
+  .criptomoedas-header {
+    display: none;
+  }
+
+  .criptomoedas-row {
+    display: block;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+
+  .criptomoedas-row td {
+    display: block;
+    padding: 5px 0;
+    text-align: right;
+  }
+
+  .criptomoedas-row td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+}
